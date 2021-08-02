@@ -1,0 +1,14 @@
+server:
+  port: 3377
+spring:
+  application:
+    name: nacos-config-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.21.129:1111
+      config:
+        server-addr: 192.168.21.129:1111
+        file-extension: yaml
+        #group: TEST_GROUP
+        # namespace: 0140a508-0b14-4221-9d5e-3b13688aec38
