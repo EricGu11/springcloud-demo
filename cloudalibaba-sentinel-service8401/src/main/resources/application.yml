@@ -3,15 +3,23 @@ server:
 spring:
   application:
     name: cloudalibaba-sentinel-service
-
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.21.131:1111
+        server-addr: localhost:8848
     sentinel:
       transport:
-        dashboard: 192.168.21.131:8080
+        dashboard: localhost:8080
         port: 8719
+      datasource:
+        d1:
+          nacos:
+            server-addr: localhost:8848
+            dataid: ${spring.application.name}
+            groupid: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
+
 management:
   endpoints:
     web:
